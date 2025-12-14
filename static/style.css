@@ -1,0 +1,131 @@
+/* 全体 */
+body {
+    margin: 0;
+    font-family: "Helvetica Neue", "Arial", sans-serif;
+    background: #f4f6f8;
+    color: #333;
+}
+
+/* ヘッダー */
+.header {
+    background: linear-gradient(135deg, #4b6cb7, #182848);
+    color: #fff;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+.header p {
+    margin-top: 8px;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* コンテナ */
+.container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+/* 検索フォーム */
+.search-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.search-form input {
+    flex: 1;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.search-form button {
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    background: #4b6cb7;
+    color: #fff;
+    cursor: pointer;
+}
+
+.search-form button:hover {
+    background: #3a57a0;
+}
+
+/* 本カード */
+.book-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.book-title {
+    margin-top: 0;
+    font-size: 20px;
+}
+
+.isbn {
+    color: #777;
+    font-size: 14px;
+}
+
+/* 図書館リスト */
+.library-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+}
+
+.library-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.library-item:last-child {
+    border-bottom: none;
+}
+
+.library-name {
+    font-size: 15px;
+}
+
+/* ステータス */
+.status {
+    font-weight: bold;
+}
+
+.ok {
+    color: #2e8b57;
+}
+
+.ng {
+    color: #c0392b;
+}
+
+/* その他 */
+.no-data,
+.no-result {
+    color: #666;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 12px;
+    color: #888;
+}

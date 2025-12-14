@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>三重県 図書館検索</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<header class="header">
+    <h1>📚 三重県 図書館検索</h1>
+    <p>本のタイトルから貸出状況を調べられます</p>
+</header>
+
+<div class="container">
+    <form method="get" class="search-form">
+        <input type="text" name="q" value="{{ q }}" placeholder="本のタイトルを入力">
+        <button type="submit">検索</button>
+    </form>
+
+    {% if books %}
+        {% for book in books %}
+            <div class="book-card">
+                <h2 class="book-title">{{ book.title }}</h2>
+                <p class="isbn">ISBN: {{ book.isbn }}</p>
+
+                {% if book.libraries %}
+                    <ul class="library-list">
+                        {% for lib in book.libraries %}
+                            <li class="library-item">
+                                <span class="library-name">{{ lib.library }}</span>
+                                <span class="status {{ 'ok' if lib.status == '貸出可' else 'ng' }}">
+                                    {{ lib.status }}
+                                </span>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <p class="no-data">所蔵情報が見つかりませんでした</p>
+                {% endif %}
+            </div>
+        {% endfor %}
+    {% elif q %}
+        <p class="no-result">検索結果がありません</p>
+    {% endif %}
+</div>
+
+<footer class="footer">
+    <p>© Portfolio Library App</p>
+</footer>
+
+</body>
+</html>
