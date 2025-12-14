@@ -2,6 +2,7 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>三重県 図書館検索</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
@@ -13,11 +14,11 @@
 </header>
 
 <div class="container">
-    <form method="get" class="search-form">
-        <input type="text" name="q" value="{{ q }}" placeholder="本のタイトルを入力">
+    <form class="search-form" method="get">
+        <input type="text" name="q" value="{{ q }}" placeholder="本のタイトル">
         <button type="submit">検索</button>
     </form>
-
+<div class="container">
     {% if books %}
         {% for book in books %}
             <div class="book-card">
@@ -46,8 +47,8 @@
 </div>
 
 <footer class="footer">
-    <p>© Portfolio Library App</p>
+    <p>© Portfolio Library App</p>    
 </footer>
-
+</div>
 </body>
 </html>
