@@ -21,6 +21,9 @@ body {
 }
 
 .header h1 {
+    display: inline-block;  /* 中央揃え内で位置を調整可能にする */
+    position: relative;
+    left: -8px;  /* 左に5pxずらす */
     margin: 0;
     font-size: 28px;
 }
